@@ -7,11 +7,13 @@
     src="https://code.jquery.com/jquery-3.3.1.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
+    <script defer src="script.js"></script>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Databases</title>
 </head>
 <body>
-    <?php include("db_connect.php");
+    <?php 
+    include("db_connect.php");
     
     $sql = sprintf("SELECT manufacturer FROM Train WHERE 1");
     $result = $conn->query($sql);
@@ -34,11 +36,15 @@
     } else {
         echo "0 results";
     }
-    $conn->close();
+
     ?>
     
-    <form>
-        
+    <form id="formdata" method="post">
+        <input placeholder="Name.." type="text" class="name">
+        <input placeholder="Amount.." type="text" class="amount">
+        <input placeholder="Consignment.." type="text" class="consign">
+        <input placeholder="Price.." type="text" class="price">
+        <input type="submit" value="fuck" class="send">
     </form>
 </body>
 </html>
