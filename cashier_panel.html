@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script defer src="script2.js"></script>
+    <title>Cashier panel - Supermarket Management System</title>
+</head>
+<body>
+    <div class="header">
+        <div class="title" style="vertical-align: middle;">
+            <a href="#">
+            <span class="logo fas fa-shopping-cart"></span>
+            <span style="display: inline-block; margin-left: -3px; color: white; font-size: 20px; ">My Market</span>
+            </a>
+        </div>
+        <div class="description">
+            <a href="#">
+            <span style="display: inline-block; margin-top: 20px; font-size: 15px; color: white; margin: 20px 25%;">Cashier panel</span>
+            </a>
+        </div>
+        <div class="userinfo">
+            <a href="#">
+            <span style="display: inline-block; margin-top: 20px; font-size: 15px; color: white; margin: 20px 15%;"><span style="display: inline-block; margin-right: 4px;" class="fas fa-user"></span>Name Surname</span>
+            </a>
+        </div>
+    </div>
+    <div class="input" style="vertical-align: middle">
+        <input type="number" class="barcode" placeholder="Barcode">
+        <input type="number" class="quantity" placeholder="Quantity" value="1">
+        <button class="chequeAdd">
+            <span class="fas fa-plus"></span>
+        </button>
+    </div>
+    <div class="products">
+        <div class="block-title">
+            Products List
+        </div>
+        <div class="table-wrapper">
+                <table class="products_table">
+                        <tr>
+                            <th class="t-bcode">Barcode</th>
+                            <th class="t-title">Title</th>
+                            <th class="t-manuf">Manufacturer</th>
+                            <th class="t-qtty">Quantity</th>
+                            <th class="t-price">Price</th>
+                        </tr>
+                        <tr>
+                                <td>482354678</td>
+                                <td>Tomato juice </td>
+                                <td>The Garden</td>
+                                <td>1</td>
+                                <td>30.0</td>
+                            </tr>
+                            <tr>
+                                <td>482354678</td>
+                                <td>Tomato juice </td>
+                                <td>The Garden</td>
+                                <td>1</td>
+                                <td>30.0</td>
+                            </tr>
+                             <tr>
+                                <td>482354678</td>
+                                <td>Tomato juice </td>
+                                <td>The Garden</td>
+                                <td>1</td>
+                                <td>30.0</td>
+                            </tr>
+                            <tr>
+                                <td>482354678</td>
+                                <td>Tomato juice </td>
+                                <td>The Garden</td>
+                                <td>1</td>
+                                <td>30.0</td>
+                            </tr>
+                            <tr>
+                                <td>482354678</td>
+                                <td>Tomato juice </td>
+                                <td>The Garden</td>
+                                <td>1</td>
+                                <td>30.0</td>
+                            </tr>
+                            <tr>
+                                <td>482354678</td>
+                                <td>Tomato juice </td>
+                                <td>The Garden</td>
+                                <td>1</td>
+                                <td>30.0</td>
+                            </tr>
+                            <tr>
+                                <td>482354678</td>
+                                <td>Tomato juice </td>
+                                <td>The Garden</td>
+                                <td>1</td>
+                                <td>30.0</td>
+                            </tr>
+                        <tr>
+                            <td>482354678</td>
+                            <td>Tomato juice </td>
+                            <td>The Garden</td>
+                            <td>1</td>
+                            <td>30.0</td>
+                        </tr>
+                        <tr>
+                            <td>482354678</td>
+                            <td>Tomato juice </td>
+                            <td>The Garden</td>
+                            <td>1</td>
+                            <td>30.0</td>
+                        </tr>
+                         <tr>
+                            <td>482354678</td>
+                            <td>Tomato juice </td>
+                            <td>The Garden</td>
+                            <td>1</td>
+                            <td>30.0</td>
+                        </tr>
+                        <tr>
+                            <td>482354678</td>
+                            <td>Tomato juice </td>
+                            <td>The Garden</td>
+                            <td>1</td>
+                            <td>30.0</td>
+                        </tr>
+                        <tr>
+                            <td>482354678</td>
+                            <td>Tomato juice </td>
+                            <td>The Garden</td>
+                            <td>1</td>
+                            <td>30.0</td>
+                        </tr>
+                        <tr>
+                            <td>482354678</td>
+                            <td>Tomato juice </td>
+                            <td>The Garden</td>
+                            <td>1</td>
+                            <td>30.0</td>
+                        </tr>
+                        <tr>
+                            <td>482354678</td>
+                            <td>Tomato juice </td>
+                            <td>The Garden</td>
+                            <td>1</td>
+                            <td>30.0</td>
+                        </tr>
+                </table>
+        </div>
+    </div>
+    <div class="info">
+        <div class="block-title">Cashier info</div>
+        <div class="sign">Cash register №</div>
+        <div class="val" id="cash_reg">3</div>
+
+        <div class="sign">Cashier </div>
+        <div class="val" id="cash_owner">Scorpion Roman</div>
+
+        <div class="sign">Current timestamp </div>
+        <div class="val" id="cash_time"></div>
+
+        <div class="sign-big">Total </div>
+        <div class="val-big"><span class="total">300.0</span>𐆔</div>
+
+        <div class="cash-actions">
+            <center>
+                <button class="btn-cancel">
+                    <span class="fas fa-ban" style="margin-right: 3px"></span>Cancel
+                </button>
+                <button class="btn-apply">
+                    <span class="fas fa-check" style="margin-right: 3px"></span>Print a cheque
+                </button>
+            </center>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="about">
+            <p><span class="ico-tiny fas fa-shopping-cart"></span>Supermarket Management System</p>
+            <p><span class="ico-tiny fas fa-user"></span>By Kreminskiy Vitaliy - 2018</p>
+            <p><span class="ico-tiny fas fa-file-alt"></span>For Database Coursework</p>
+        </div>
+    </div>
+</body>
+</html>

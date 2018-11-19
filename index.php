@@ -41,10 +41,12 @@
     
     <form id="formdata" method="post">
         <input placeholder="Name.." type="text" class="name">
-        <input placeholder="Amount.." type="text" class="amount">
         <input placeholder="Consignment.." type="text" class="consign">
         <input placeholder="Price.." type="text" class="price">
         <input type="submit" value="fuck" class="send">
     </form>
+    <button id="start" class="start_tr">Start</button>
+    <button id="cancel" class="cancel_tr">Rollback</button>
+    <button id="apply" class="apply_tr">Commit</button>
 </body>
 </html>
