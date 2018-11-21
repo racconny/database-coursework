@@ -32,4 +32,21 @@ if (isset($_POST["transaction"])){
     }
 }
 
+if (isset($_POST["action"])){
+    if ($_POST["action"] === "getProduct"){
+        $q = "SELECT barcode, title, price, manufacturer FROM Product WHERE barcode = ".$_POST['barcode']." LIMIT 1";
+        $query = $conn->query($q);
+
+        if($query) 1;
+        else echo "Something went wrong";
+        
+        if (mysqli_num_rows($query) > 0){
+            echo json_encode(mysqli_fetch_assoc($query));
+        }
+        else {
+            echo json_encode("0 results");
+        }
+    }
+}
+
 ?>
