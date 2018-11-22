@@ -2,7 +2,7 @@ const products = document.querySelector(".products_table");
 const total_label = document.querySelector(".total");
 let total = 0;
 
-$('.btn-apply').click((e) => {
+$('.chequeAdd').click((e) => {
     
     const bc = $('.barcode').val();
     const qt = $('.quantity').val();
@@ -25,6 +25,9 @@ $('.btn-apply').click((e) => {
             total += parseFloat(data.price);
             total_label.innerHTML = total;
             console.log(data);
+            
+            let a = new Audio('res/beep.mp3');
+            a.play();
         }
     });
     }
