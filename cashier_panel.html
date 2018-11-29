@@ -11,7 +11,8 @@
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
     <script defer src="script2.js"></script>
-    <script defer src="script.js"></script>
+    <script defer src="js_queries.js"></script>
+    <script defer src="js_ui.js"></script>
     <title>Cashier panel - Supermarket Management System</title>
 </head>
 <body>
@@ -73,10 +74,10 @@
 
         <div class="cash-actions">
             <center>
-                <button class="btn-cancel">
+                <button class="btn-cancel tr_control" id="stop">
                     <span class="fas fa-ban" style="margin-right: 3px"></span>Cancel
                 </button>
-                <button class="btn-apply">
+                <button class="btn-apply tr_control" id="apply">
                     <span class="fas fa-check" style="margin-right: 3px"></span>Print a cheque
                 </button>
             </center>
