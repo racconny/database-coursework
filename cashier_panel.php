@@ -1,20 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style2.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <script
-        src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
-    <script defer src="script2.js"></script>
-    <script defer src="js_queries.js"></script>
-    <script defer src="js_ui.js"></script>
-    <title>Cashier panel - Supermarket Management System</title>
-</head>
+<?php include("head.php") ?> 
 <body>
     <div class="header">
         <div class="title" style="vertical-align: middle;">
@@ -90,5 +76,6 @@
             <p><span class="ico-tiny fas fa-file-alt"></span>For Database Coursework</p>
         </div>
     </div>
+    <!-- Additional hidden elements -->
 </body>
 </html>

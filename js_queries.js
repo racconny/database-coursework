@@ -4,6 +4,7 @@ const add_btn = document.querySelector(".chequeAdd");
 
 let total = 0;
 let items = [];
+let chequeID = 0;
 
 const addTableRow = (data) => {
     let r = products.insertRow(1);
@@ -59,6 +60,8 @@ const applyPurchase = () => {
         },
         success: function(data){
             console.log(data);
+            chequeID = parseInt(data);
+            printCheque();
         }
     });
 }

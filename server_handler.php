@@ -9,13 +9,14 @@ if (isset($_POST["action"])){
         echo json_encode(mysqli_fetch_assoc($query));
     } else if ($_POST["action"] === "applyPurchase"){
         $products = $_POST["products"];
-        $q = "INSERT INTO Cheque (cashierID, totalPrice, timedate) VALUES (123, ".$_POST['sum'].", NOW())";
+        $q = "INSERT INTO Cheque (cashierID, totalPrice, timedate) VALUES (4, ".$_POST['sum'].", NOW())";
         $query = $conn->query($q) or die($conn->error);
         $cheque_id = mysqli_insert_id($conn);
         foreach($products as $item){
             $q = "INSERT INTO Cheque_Items (itemID, chequeID, quantity) VALUES (".$item['id'].", ".$cheque_id.", ".$item['quantity'].")";
             $query = $conn->query($q) or die($conn->error);
         }
+        echo $cheque_id;
     }
 }
 
