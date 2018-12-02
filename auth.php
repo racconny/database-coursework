@@ -6,9 +6,35 @@ if (isset($_POST["login"]) && isset($_POST["password"])){
     if ($query->num_rows > 0){
         $row = $query->fetch_assoc();
         if ($row['role'] === 'cashier'){
+            $id = $row['id'];
+            $q = "SELECT * FROM Cashier WHERE user_id = '$id'";
+            $query = $conn->query($q); 
+            $cashier_info = $query->fetch_assoc();
+
+            session_start();
+
+            $_SESSION['name'] = $row['name'];
+            $_SESSION['surname'] = $row['surname'];
+            $_SESSION['cashRegister'] = $cashier_info['cashRegister'];
+
             header("Location: cashier_panel.php");
+        } else if ($row['role'] === 'supervisor'){
+            session_start();
+
+            $_SESSION['name'] = $row['name'];
+            $_SESSION['surname'] = $row['surname'];
+            $_SESSION['role'] = $row['role'];
+
+            header("Location: supervisor_panel.php");
         }
     } else echo "Not such user";
+}
+
+if (isset($_GET['action'])){
+    if ($_GET['action'] === "outlog"){
+        session_destroy();
+        header("Location: auth.php");
+    }
 }
 
 ?> 

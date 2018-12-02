@@ -59,9 +59,11 @@ const applyPurchase = () => {
             sum: total 
         },
         success: function(data){
+            data = JSON.parse(data);
             console.log(data);
-            chequeID = parseInt(data);
-            printCheque();
+            chequeID = parseInt(data.chequeID);
+            printCheque(data);
+            location.reload();
         }
     });
 }

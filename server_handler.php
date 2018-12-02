@@ -1,6 +1,7 @@
 <?php
 
 include("db_connect.php");
+session_start();
 
 if (isset($_POST["action"])){
     if ($_POST["action"] === "getProduct"){
@@ -16,7 +17,10 @@ if (isset($_POST["action"])){
             $q = "INSERT INTO Cheque_Items (itemID, chequeID, quantity) VALUES (".$item['id'].", ".$cheque_id.", ".$item['quantity'].")";
             $query = $conn->query($q) or die($conn->error);
         }
-        echo $cheque_id;
+        echo json_encode(array('chequeID' => $cheque_id,
+                   'name' => $_SESSION['name'],
+                   'surname' => $_SESSION['surname'],
+                   'cashRegister' => $_SESSION['cashRegister']));
     }
 }
 

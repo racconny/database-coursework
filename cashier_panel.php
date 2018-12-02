@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include("head.php") ?> 
+<?php include("head.php") ;
+session_start();
+    if (!isset($_SESSION['name'])){
+        header("Location: auth.php");
+    }
+?> 
 <body>
     <div class="header">
         <div class="title" style="vertical-align: middle;">
@@ -15,8 +20,8 @@
             </a>
         </div>
         <div class="userinfo">
-            <a href="#">
-            <span style="display: inline-block; margin-top: 20px; font-size: 15px; color: white; margin: 20px 15%;"><span style="display: inline-block; margin-right: 4px;" class="fas fa-user"></span>Name Surname</span>
+            <a href="auth.php?action=outlog">
+            <span style="display: inline-block; margin-top: 20px; font-size: 15px; color: white; margin: 20px 15%;"><span style="display: inline-block; margin-right: 4px;" class="fas fa-user"></span><?php echo $_SESSION['surname']." ".$_SESSION['name'][0]."."; ?></span>
             </a>
         </div>
     </div>
@@ -47,13 +52,13 @@
     <div class="info">
         <div class="block-title">Cashier info</div>
         <div class="sign">Cash register №</div>
-        <div class="val" id="cash_reg">3</div>
+        <div class="val" id="cash_reg"><?php echo $_SESSION['cashRegister']; ?></div>
 
         <div class="sign">Cashier </div>
-        <div class="val" id="cash_owner">Scorpion Roman</div>
+        <div class="val" id="cash_owner"><?php echo $_SESSION['name']." ".$_SESSION['surname']; ?></div>
 
         <div class="sign">Current timestamp </div>
-        <div class="val" id="cash_time"></div>
+        <div class="val" id="cash_time"><?php echo date(DATE_RFC822); ?></div>
 
         <div class="sign-big">Total </div>
         <div class="val-big"><span class="total">0</span>𐆔</div>
