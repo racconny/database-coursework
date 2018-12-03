@@ -88,15 +88,34 @@ if (!empty($_POST['bcode']) and !empty($_POST['title'])){
             </tr>
             <tr>
                 <td></td>
-                <td> <button class="submit_btn update-btn" value="Update">Update</button> </td>
+                <td><button class="submit_btn" value="Update">Update</button> </td>
             </tr>
         </table>
     </div>
-    <div class="footer">
+    <div class="cheque-id">
+        <div class="block-title">
+        <span style="display: inline-block; margin-right: 4px;" class="fas fa-search"></span>Find a cheque by id
+        </div>
+        <div class="search_partition"> <input class="avg-input barcode-query" type="number" placeholder="Search by ID .." type="submit" class="search-btn"> <button class="btn-search bc"> <span class="fas fa-search"></span> </button> </div>
+
+        <div class="table-wrapper">
+                <table class="products_table">
+                        <tr>
+                            <th class="t-bcode">Barcode</th>
+                            <th class="t-title">Title</th>
+                            <th class="t-manuf">Manufacturer</th>
+                            <th class="t-qtty">Quantity</th>
+                            <th class="t-price">Price</th>
+                        </tr>
+                        
+                </table>
+        </div>
+    </div>
+    <!-- <div class="footer">
         <div class="about">
             <p><span class="ico-tiny fas fa-shopping-cart"></span>Supermarket Management System</p>
             <p><span class="ico-tiny fas fa-user"></span>By Kreminskiy Vitaliy - 2018</p>
             <p><span class="ico-tiny fas fa-file-alt"></span>For Database Coursework</p>
         </div>
-    </div>
+    </div> -->
 </body>

@@ -435,3 +435,23 @@ body{
 .update_table tr td{
     padding-bottom: 30px;
 }
+
+.cheque-id{
+    grid-row: 11 / 19;
+    grid-column: 1 / 6;
+    border: 1px solid blue;
+    border-radius: 4px;
+    display: block;
+}
+
+.update-btn{
+    width: 160px;
+    height: 45px;
+    color: white;
+    border-radius: 3px;
+    background-color: rgb(206, 0, 45);
+    border: none;
+    float: right;
+    font-size: 20px;
+    margin-right: 5px;
+}

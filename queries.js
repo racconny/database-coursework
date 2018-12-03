@@ -4,6 +4,7 @@ const add_btn = document.querySelector(".chequeAdd");
 const btn = document.querySelector(".search-btn");
 const search = document.querySelector(".bc");
 const update_btn = document.querySelector(".update-btn");
+const remove_btn = document.querySelector(".remove-btn");
 
 let total = 0;
 let items = [];
@@ -109,14 +110,38 @@ const searchBybarcode = () => {
                 manufacturer.value = data.manufacturer;
                 category.value = data.category;
                 product = data;
-            }
+            } else alert("Not found");
         }
     });
 }
 
 const updateProduct = () => {
-    if (!product) alert("Nothing to update");
+    const title = document.querySelector(".newtitle");
+    const price = document.querySelector(".newprice");
+    const manufacturer = document.querySelector(".newmanufacturer");
+    const category = document.querySelector(".newcategory");
+    if (!product) alert("Nothing to update")
+    else {
+        $.ajax({
+            url: "product_update.php",
+            type: "POST",
+            data: {
+                action: "update",
+                productid: product.id,
+                title: title.value ? title.value : product.title,
+                price: price.value ? price.value : product.price,
+                manufacturer: manufacturer.value ? manufacturer.value : product.manufacturer,
+                category: category.value ? category.value : product.category
+            },
+            success: function(data){
+                //data = JSON.parse(data);
+                console.log(data);
+            }
+        }); 
+    }
+
 }
 
+remove_btn.addEventListener('click', removeProduct);
 update_btn.addEventListener('click', updateProduct);
 search.addEventListener('click', searchBybarcode);
