@@ -71,4 +71,11 @@ if (isset($_GET['action'])){
         </table>
     </form>
 </div>
+<div class="footer">
+        <div class="about">
+            <p><span class="ico-tiny fas fa-shopping-cart"></span>Supermarket Management System</p>
+            <p><span class="ico-tiny fas fa-user"></span>By Kreminskiy Vitaliy - 2018</p>
+            <p><span class="ico-tiny fas fa-file-alt"></span>For Database Coursework</p>
+        </div>
+    </div>
 </body>

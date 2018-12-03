@@ -21,3 +21,4 @@ const printCheque = (data) => {
 
     printingWindow.print();
 }
+

@@ -13,9 +13,8 @@ if (!empty($_POST['bcode']) and !empty($_POST['title'])){
 
     $q = "INSERT INTO Product (barcode, title, manufacturer, category, price) values ($barcode, '$title', '$manufacturer', '$category', $price)";
     $query = $conn->query($q);
-
-    $_POST = array();
 }
+
 ?>
 <body>
 <div class="header">
@@ -66,5 +65,38 @@ if (!empty($_POST['bcode']) and !empty($_POST['title'])){
             </tr>
             </form>
         </table>
+    </div>
+    <div class="update_item">
+        <div class="block-title"><span style="display: inline-block; margin-right: 4px;" class="fas fa-edit"></span>Edit existing item</div>
+        <div class="search_partition"> <input class="avg-input barcode-query" type="number" placeholder="Search by barcode .." type="submit" class="search-btn"> <button class="btn-search bc"> <span class="fas fa-search"></span> </button> </div>
+        <table class="update_table">
+        <tr>
+                <td>New title: </td>
+                <td> <input pattern=".{2,}" required title="2 characters minimum" class="small-input newtitle" type="text" name="newtitle"> </td>
+            </tr>
+            <tr>
+                <td>New manufacturer: </td>
+                <td> <input pattern=".{3,}" required title="3 characters minimum" class="small-input newmanufacturer" type="text" name="newmanufacturer"> </td>
+            </tr>
+            <tr>
+                <td>New price: </td>
+                <td> <input class="small-input newprice" type="number" name="newprice" step="0.01"> </td>
+            </tr>
+            <tr>
+                <td>New category: </td>
+                <td> <input class="small-input newcategory" type="text" name="newcategory"> </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td> <button class="submit_btn update-btn" value="Update">Update</button> </td>
+            </tr>
+        </table>
+    </div>
+    <div class="footer">
+        <div class="about">
+            <p><span class="ico-tiny fas fa-shopping-cart"></span>Supermarket Management System</p>
+            <p><span class="ico-tiny fas fa-user"></span>By Kreminskiy Vitaliy - 2018</p>
+            <p><span class="ico-tiny fas fa-file-alt"></span>For Database Coursework</p>
+        </div>
     </div>
 </body>

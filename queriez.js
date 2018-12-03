@@ -1,10 +1,14 @@
 const products = document.querySelector(".products_table");
 const apply_btn = document.querySelector(".btn-apply");
 const add_btn = document.querySelector(".chequeAdd");
+const btn = document.querySelector(".search-btn");
+const search = document.querySelector(".bc");
+const update_btn = document.querySelector(".update-btn");
 
 let total = 0;
 let items = [];
 let chequeID = 0;
+let product;
 
 const addTableRow = (data) => {
     let r = products.insertRow(1);
@@ -68,12 +72,51 @@ const applyPurchase = () => {
     });
 }
 
-apply_btn.addEventListener('click', () => {
-    applyPurchase();
-})
+if (apply_btn){
+    apply_btn.addEventListener('click', () => {
+        applyPurchase();
+    })    
+}
 
-add_btn.addEventListener('click', () => {
-    let bcode = document.querySelector(".barcode").value;
-    requestData(bcode);
-})
+if (add_btn){
+    add_btn.addEventListener('click', () => {
+        let bcode = document.querySelector(".barcode").value;
+        requestData(bcode);
+    })
+}
 
+
+const searchBybarcode = () => {
+    console.log("called");
+    const title = document.querySelector(".newtitle");
+    const price = document.querySelector(".newprice");
+    const manufacturer = document.querySelector(".newmanufacturer");
+    const category = document.querySelector(".newcategory");
+    const query = document.querySelector(".barcode-query").value;
+    $.ajax({
+        url: "product_update.php",
+        type: "POST",
+        data: {
+            action: "search",
+            q: query
+        },
+        success: function(data){
+            console.log(data);
+            data = JSON.parse(data);
+            if (data.status === "ok"){
+                title.value = data.title;
+                price.value = data.price;
+                manufacturer.value = data.manufacturer;
+                category.value = data.category;
+                product = data;
+            }
+        }
+    });
+}
+
+const updateProduct = () => {
+    if (!product) alert("Nothing to update");
+}
+
+update_btn.addEventListener('click', updateProduct);
+search.addEventListener('click', searchBybarcode);

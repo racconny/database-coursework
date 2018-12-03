@@ -8,7 +8,7 @@
         src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
-    <script defer src="queries.js"></script>
+    <script defer src="queriez.js"></script>
     <script defer src="ui.js"></script>
-    <title>Cashier panel - Supermarket Management System</title>
+    <title>Supermarket Management System</title>
 </head>
